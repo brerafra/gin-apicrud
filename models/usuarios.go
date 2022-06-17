@@ -1,12 +1,13 @@
 package models
 
-import "time"
+import "github.com/jinzhu/gorm"
 
 type Usuarios struct {
-	ID          uint      `json:"id" gorm:"primary_key"`
-	Folio       string    `json:"folio" gorm:"unique"`
-	Nombre      string    `json:"nombre"`
-	Vigencia    time.Time `json:"vigencia"`
-	Areas       string    `json:"areas"`
-	Privilegios string    `json:"privilegios"`
+	gorm.Model
+	Folio       string `json:"folio" gorm:"unique"`
+	Nombre      string `json:"nombre"`
+	Areas       string `json:"areas"`
+	Privilegios string `json:"privilegios"`
 }
+
+//Vigencia    time.Time `json:"vigencia"`
